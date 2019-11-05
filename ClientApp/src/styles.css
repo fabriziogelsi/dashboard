@@ -54,3 +54,13 @@ a:hover {
 .section-container {
     padding: 30px;
 }
+
+/*KEEP THE ASPECT OF THE CHART COOL WHEN RESIZE*/
+#canvas-holder {
+    position: absolute;
+    padding-top: 45px;
+    top: 8px;
+    left: 2px;
+    right: 2px;
+    bottom: 8px;
+}
