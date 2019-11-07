@@ -55,7 +55,7 @@ namespace Advantage.API.Controllers
             return Ok(groupedResult);
         }
 
-        [HttpGet("ByCustormer/{n}")]
+        [HttpGet("ByCustomer/{n}")]
         public IActionResult ByCustomer(int n)
         {
             var orders = _ctx.Orders.Include(o => o.Customer).ToList();
@@ -72,7 +72,7 @@ namespace Advantage.API.Controllers
             return Ok(groupedResult);
         }
 
-        [HttpGet("GetOrder/{}", Name="GetOrder")]
+        [HttpGet("GetOrder/{id}", Name="GetOrder")]
         public IActionResult GetOrder(int id)
         {
             var order =  _ctx.Orders.Include(o => o.Customer)

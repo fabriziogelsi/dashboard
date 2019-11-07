@@ -47,11 +47,11 @@ namespace Advantage.API
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
+            /*else
             {
                 app.UseExceptionHandler("/Error");
                 app.UseHsts();
-            }
+            }*/
 
             seed.SeedData(20, 1000);
 
@@ -64,8 +64,8 @@ namespace Advantage.API
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-                /*
-                endpoints.MapControllerRoute(
+                
+               /* endpoints.MapControllerRoute(
             name: "default",
             pattern: "api/{controller}/{action}/{id?}",
             defaults: new { controller = "Home", action = "Index" });
