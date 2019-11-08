@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { ChartsModule } from 'ng2-charts';
 
@@ -15,6 +16,9 @@ import { LineChartComponent } from './charts/line-chart/line-chart.component';
 import { PieChartComponent } from './charts/pie-chart/pie-chart.component';
 import { ServerComponent } from './server/server.component';
 import { PaginationComponent } from './pagination/pagination.component';
+
+// Services
+import { SalesDataService } from './services/sales-data.service';
 
 @NgModule({
   declarations: [
@@ -33,9 +37,10 @@ import { PaginationComponent } from './pagination/pagination.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ChartsModule
+    ChartsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [SalesDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
