@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { SalesDataService } from '../../services/sales-data.service';
 import * as moment from 'moment';
-/* 
+/*
 const SAMPLE_BARCHART_DATA: any[] = [
   { data: [65, 59, 80, 81, 56, 54, 30], label: 'Q3 Sales'},
   { data: [68, 21, 10, 89, 26, 78, 80], label: 'Q4 Sales'}
@@ -38,12 +38,14 @@ export class BarChartComponent implements OnInit {
     .subscribe(res => {
       const localChartData = this.getChartData(res);
       this.barChartLabels = localChartData.map(x => x[0]).reverse();
-      this.barChartData = [{ 'data': localChartData.map(x => x[1]), 'label': 'Sales'}];
+      this.barChartData = [{ 'data': localChartData.map(x => x[1]), 'label': 'Sales'}]
     });
   }
 
   getChartData(res: Response){
+    // tslint:disable-next-line: no-string-literal
     this.orders = res['page']['data'];
+    /* tslint:enable:no-string-literal */
     const data = this.orders.map(o => o.total);
 
     const formattedOrders = this.orders.reduce((r, e) => {
